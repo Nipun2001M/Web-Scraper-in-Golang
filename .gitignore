@@ -1,2 +1,5 @@
 .env
 thunder-tests
+*.exe
+*.out
+*.test

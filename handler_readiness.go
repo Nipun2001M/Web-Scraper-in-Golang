@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-func handlerRediness(w http.ResponseWriter,r *http.Request){
-	resondWithJson(w,200,struct{}{})
+func handlerReadiness(w http.ResponseWriter,r *http.Request){
+	respondWithJson(w,200,struct{}{})
 
 }
