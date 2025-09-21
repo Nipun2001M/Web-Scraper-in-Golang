@@ -17,6 +17,8 @@ func main() {
 	if portString==""{
 		log.Fatal("PORT Not Found in the Environment variables")
 	}
+
+
 	router :=chi.NewRouter()
 	router.Use(cors.Handler(cors.Options{
 		AllowedOrigins:   []string{"*"}, 
@@ -26,8 +28,10 @@ func main() {
 		AllowCredentials: true,
 		MaxAge:           300, 
 	}))
+
+
 	srv:=&http.Server{
-		Handler: router,
+		Handler: router, 
 		Addr: ":"+portString,
 
 	}
