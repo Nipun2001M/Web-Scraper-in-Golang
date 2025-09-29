@@ -39,10 +39,10 @@ func main() {
 		Addr:    ":" + portString,
 	}
 
-	log.Printf("Server Starting on PORT: %v", portString)
+	log.Printf("Server Starting on PORT : %v", portString)
 	err := srv.ListenAndServe()
 	if err != nil {
-		log.Fatal("Error: Listening To Server: ", err)
+		log.Fatal("Error: Listening To Server : ", err)
 	}
 }
 
