@@ -12,13 +12,13 @@ import (
 
 func (apiCfg *apiConfig)handlerCreateUser(w http.ResponseWriter,r *http.Request){
 	type parameters struct{
-		Name string`name`
+		Name string `name`
 
 	}
 	params:=parameters{}
 	error:=json.NewDecoder(r.Body).Decode(&params)
 	if error!=nil{
-		respondWithError(w,400,fmt.Sprintf("ERROR Parsing Json:",error))
+		respondWithError(w,400,fmt.Sprintf("ERROR Parsing Json: %v",error))
 	}
 	user,err:=apiCfg.DB.CreateUser(r.Context(),database.CreateUserParams{
 		ID: uuid.New(),
@@ -27,7 +27,7 @@ func (apiCfg *apiConfig)handlerCreateUser(w http.ResponseWriter,r *http.Request)
 		Name: params.Name,
 	})
 	if err!=nil{
-		respondWithError(w,400,fmt.Sprintf("Couldnt Create User:",err))
+		respondWithError(w,400,fmt.Sprintf("Couldnt Create User: %v",err))
 		return
 
 
