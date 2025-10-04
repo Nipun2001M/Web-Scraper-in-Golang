@@ -33,7 +33,7 @@ func main() {
 	if err !=nil{
 		log.Fatal("Cant Connect to database : ",err)
 	}
-	log.Printf("Connected To Database")
+	log.Printf("Sucessfully Connected To Database..")
 
 	
 	apiConfig:=apiConfig{
