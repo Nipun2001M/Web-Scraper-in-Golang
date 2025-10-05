@@ -31,7 +31,7 @@ func main() {
 	 }
 	conn,err:=sql.Open("postgres",dbURL)
 	if err !=nil{
-		log.Fatal("Cant Connect to database : ",err)
+		log.Fatal("Error Occured Cant Connect to database : ",err)
 	}
 	log.Printf("Sucessfully Connected To Database..")
 
